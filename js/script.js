@@ -4,12 +4,13 @@ var menuTop = $('#menuBar').position();
 $(window).scroll(function () {
     var scrollPosition = $(window).scrollTop();
     //$('#scrollPosition').html(x);
-    if(scrollPosition >= menuTop.top){
+    if(scrollPosition > menuTop.top){
         $('#menuBar').css({
             'position' : 'fixed',
             'top' : '0px',
             'width' : '100%',
-            'background-color' : '#17a2b8',
+            'margin-left': '-15px',
+            'background-color' : '#0c5460',
             'z-index' : '99'
         });
     }
@@ -20,6 +21,26 @@ $(window).scroll(function () {
         });
     }
 });
+
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:false,
+    autoplay:100,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:4
+        }
+    }
+})
+
+
 
 $('#name').keyup(function () {
     checkName();
